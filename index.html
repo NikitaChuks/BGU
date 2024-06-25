@@ -1,0 +1,106 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+ <meta charset="UTF-8"> 
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+ <title>Управление отоплением</title> 
+ <link rel="stylesheet" href="main.css"> 
+ <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> 
+</head> 
+<body> 
+    <body style="width:100%"> 
+
+ <header class="header"> 
+ <div class="create-line-left"></div> 
+ <img src="images/v1_4.png" width="330" height="135"> 
+ <div class="v45_6"><!--класс заголовка--> 
+ <span class="v3_3">Управление отоплением</span> 
+ <span class="v4_5"> С помощью данной программы вы сможете рассчитать тепловой режим<br /> 
+здания по текущим значениям температуры наружного воздуха и<br /> 
+температуры воздуха в помещениях</span></div> 
+
+ <span class="v16_14">Тепловая мощность системы отопления</span> 
+ <span class="v26_96">Средняя температура теплоносителя в </br>отопительных приборах (tср)</span> 
+<span class="v5_6"></span> 
+<div class="v45_2"><!--класс для 1 модуля--> 
+ <span class="v6_52">Переменная</span> 
+ <span class="v6_53">Результат(Вт)</span> 
+ <span class="v6_54">Расшифровка</span> 
+ <div class="line"></div><!--линии--> 
+ <div class="line2"></div> 
+ <div class="name"></div> 
+ <div class="name"></div> 
+ <script type="text/javascript">
+ let text1;
+ function pervaya(){
+ var  num1 = document.getElementById("vvod1").value;
+ var  num2 = document.getElementById("vvod2").value;
+ text1  = document.getElementById("text1");
+ let Result = Number(num1);
+ let Result1  = Number(num2);
+let Result2 = (Result1 - Result)*8.3*0.25;
+text1.textContent = Result2;
+ }
+</script>
+ 
+ <div class="vvod1"></div> <!--ввод 1 значения уже с вводом--> 
+ <input type="number" placeholder="Введите значение" class="vvod1" id ="vvod1" ><!--ввод цифр--> 
+ <div class="vvod2"></div><!--ввод 2 значения с вводом--> 
+ <input type="number" placeholder="Введите значение" class="vvod2" id ="vvod2"> 
+ <form oninput="out.value=((parseFloat(vvod2.value)-parseFloat(vvod1.value))*8.3*0.25)">
+    <div class="vvod1"></div> 
+    <input type="number" placeholder="Введите значение" class="vvod1" id="vvod1"> 
+    <div class="vvod2"></div> 
+    <input type="number" placeholder="Введите значение" class="vvod2" id="vvod2"> 
+    <p><output name="out" class="i1" for="vvod1vvod2">0</output></p></form>
+ 
+ <span class="v26_92">Tемпература воздуха в помещении (t)</span> 
+ <span class="v26_97">Тепловая мощность</br> системы отопления</span> 
+ <span class="v6_55">Q</span><span class="v6_j">отопл</span>
+ </div>
+ <span class="v26_138">Потери теплоты на вентиляцию помещения</span> 
+ <div class="v45_4"><!--класс 2 модуля--> 
+
+ <div class="v45_3"></div> 
+ <span class="v26_134">Tемпература воздуха в помещении (t)</span> 
+ <span class="v26_136">Температура приточного воздуха(tср)</span> 
+ <span class="v35_54">Массовый расход нагреваемого<br>
+ вентилируемого воздуха кг/с (Gвент)</span> 
+ <form oninput="out.value=((parseFloat(vvod5.value)*(parseFloat(vvod3.value)-parseFloat(vvod4.value))))">
+ <div class="vvod3"></div> 
+ <input type="number" placeholder="Введите значение" class="vvod3" id="vvod3"> 
+ <div class="vvod4"></div> 
+ <input type="number" placeholder="Введите значение" class="vvod4" id="vvod4"> 
+ <div class="vvod5"></div> 
+ <input type="number" placeholder="Введите значение" class="vvod5"  id="vvod5"> 
+ <p><output name="out" class="i2" for="vvod3vvod4vvod5">0</output></p></form>
+ 
+ <span class="v41_9">Q</span> <span class="v41_k">вент</span> 
+ <span class="v41_10">Потери теплоты на<br>
+ вентиляцию помещения</span> 
+ <span class="v26_135">Переменная</span> 
+ <span class="v26_130">Расшифровка</span> 
+ <span class="v26_133">Результат(Вт)</span> 
+ <div class="line3"></div> 
+ <div class="line4"></div>  
+ <span class="v41_26">Теплопоступления от человека, находящегося в здании</span> 
+ <div class="v45_5"><!--класс 3 модуля--> 
+    <form oninput="out.value=((35-parseFloat(vvod6.value))*2.51)"> 
+ <div class="vvod6"></div> 
+ <input type="number" placeholder="Введите значение" class="vvod6" id="vvod6"> 
+ <span class="v41_22">Количество человек в помещении</span> 
+ <p><output name="out" class="i3" for="vvod6">0</output></p></form>
+ 
+<span class="v41_17">Расшифровка</span> 
+ <span class="v41_21">Результат(Вт)</span> 
+ <span class="v41_23">Переменная</span> 
+ <div class="line5"></div> 
+ <div class="line6"></div> 
+ <span class="v41_25">Теплопоступления<br>
+ от человека</span> 
+ <span class="v41_27">Q</span><span class="v41_l">чел</span></div></div><div class="v41_28"></div> 
+ </div>
+
+</header> 
+</body> 
+</html>
